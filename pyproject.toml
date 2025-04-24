@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jobs"
+version = "0.1.0"
+description = "A tool to extract job vacancy information from webpages"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "requests",
+    "beautifulsoup4",
+    "click",
+    "langchain",
+    "langchain-core",
+    "pydantic",
+    "python-dotenv",
+    "litellm",
+]
+
+[project.scripts]
+fetch-webpage = "jobs.fetch_webpage:fetch_webpage"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
